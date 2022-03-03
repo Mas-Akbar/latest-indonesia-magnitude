@@ -8,7 +8,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="latest-indonesia-magnitude",
-    version="0.1",
+    version="0.3",
     author="Malik Akbar",
     author_email="alee@vescod.com",
     description="This package will get the latest eartquake in indonesia from BMKG",

@@ -1,5 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
+import datetime
+
 
 def ekstraksi_data():
     try:
@@ -33,19 +35,19 @@ def ekstraksi_data():
                 dirasakan = res.text
             i = i + 1
 
-
         hasil = dict()
         hasil['tanggal'] = tanggal
         hasil['waktu'] = waktu
         hasil['magnitude'] = magnitude
         hasil['kedalaman'] = kedalaman
-        hasil['koordinat'] = {'ls':ls, 'bt':bt}
+        hasil['koordinat'] = {'ls': ls, 'bt': bt}
         hasil['lokasi'] = lokasi
         hasil['dirasakan'] = dirasakan
         return hasil
     else:
         print('alamat web salah')
         return None
+
 
 def tampilkan_data(result):
     if result is None:
@@ -64,8 +66,10 @@ def tampilkan_data(result):
     print("Waktu", {result['waktu']})
     result = ekstraksi_data()
     print(result)
+
+
 #    pass
 if __name__ == '__main__':
+    print('Info terbaru per : ', datetime.datetime.now())
     result = ekstraksi_data()
     tampilkan_data(result)
-
